@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "46b0d0c2-6f5b-48a3-a367-c7ff15063335",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "5a6c3bae-fa5b-433b-82a2-22afcb29bf76",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "04492c0c-1917-418a-bcd1-00e671817b6f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0b4f12b1-93b0-4110-99b9-b37a26d1160d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a77cf33e-d25c-47e9-9ac7-c3f3545f5857",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

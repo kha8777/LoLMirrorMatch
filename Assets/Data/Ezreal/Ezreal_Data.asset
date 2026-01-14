@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0fb8531bb2cd442887996bce88536c, type: 3}
+  m_Name: Ezreal_Data
+  m_EditorClassIdentifier: Assembly-CSharp::HeroData
+  heroName: Ezreal
+  bCost: 675
+  rpCost: 585
+  HP: 600
+  HPR: 4
+  MP: 375
+  MPR: 8.5
+  MS: 325
+  AD: 60
+  AS: 0.625
+  AR: 24
+  MR: 30
+  CR: 0
+  CritDMG: 175
+  MissleSpeed: 2000
+  HPPL: 102
+  HPRPL: 0.65
+  MPPL: 70
+  MPRPL: 0.65
+  ADPL: 2.75
+  ASPL: 2.5
+  ARPL: 4.2
+  MRPL: 1.3
