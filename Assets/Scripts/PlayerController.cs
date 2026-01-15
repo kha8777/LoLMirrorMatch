@@ -96,6 +96,28 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -xRange, xRange), transform.position.y, transform.position.z);
     }
 
+    public void OnBasicAttackButtonClick()
+    {
+        if (attackingTime <= 0f && hasCastSkill)
+        {
+            if (isAttackingState && hasFired) StopAttack();
+            if (anySkillCasting() && hasCastSkill) StopAllSkillCasts();
+
+            attackingTime = 1f / heroData.AS;
+            hasFired = false;
+            isAttackingState = true;
+
+            if (attackRoutine != null) StopCoroutine(attackRoutine);
+
+            Vector3 aim = indicator.transform.right;
+            float angle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
+            const float rotationOffset = 90f;
+            bulletRotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
+
+            attackRoutine = StartCoroutine(FireBullet());
+        }
+    }
+
     void HandleAttack()
     {
         attackingTime -= Time.deltaTime;

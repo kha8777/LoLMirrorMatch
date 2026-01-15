@@ -6,5 +6,6 @@
 /[UserSettings]/
 .vs/
 *.sln
+*.slnx
 *.csproj
 *.unitypackage
