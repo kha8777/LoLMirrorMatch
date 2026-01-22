@@ -9,10 +9,22 @@ public class SkillUI : MonoBehaviour
     public Image cooldownOverlay;
     public TextMeshProUGUI cooldownText;
     public TextMeshProUGUI keyText;
+    public SkillBase linkedSkill;
+    public int skillSlotIndex;
 
-    private SkillBase linkedSkill;
+    void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            var pc = player.GetComponent<PlayerController>();
+            if (pc != null && pc.currentSkills.Count > skillSlotIndex)
+            {
+                linkedSkill = pc.currentSkills[skillSlotIndex];
+            }
+        }
+    }
 
-    // Hàm này để "gắn" một kỹ năng thực tế vào ô UI này
     public void Setup(SkillBase skill)
     {
         linkedSkill = skill;
@@ -28,39 +40,40 @@ public class SkillUI : MonoBehaviour
     {
         if (linkedSkill == null) return;
 
-        // Cập nhật vòng tròn hồi chiêu
         if (linkedSkill.CurrentCooldown > 0)
         {
-            cooldownOverlay.fillAmount = linkedSkill.CurrentCooldown / linkedSkill.skillData.cooldown;
-            if (linkedSkill.CurrentCooldown > 1f)
+            if (cooldownOverlay != null)
             {
-                cooldownText.text = Mathf.Ceil(linkedSkill.CurrentCooldown).ToString();
+                cooldownOverlay.fillAmount = linkedSkill.CurrentCooldown / linkedSkill.skillData.cooldown;
             }
-            else
+
+            if (cooldownText != null)
             {
-                cooldownText.text = linkedSkill.CurrentCooldown.ToString("F1");
+                if (linkedSkill.CurrentCooldown > 1f)
+                {
+                    cooldownText.text = Mathf.Ceil(linkedSkill.CurrentCooldown).ToString();
+                }
+                else
+                {
+                    cooldownText.text = linkedSkill.CurrentCooldown.ToString("F1");
+                }
             }
         }
         else
         {
-            cooldownOverlay.fillAmount = 0;
-            cooldownText.text = "";
+            if (cooldownOverlay != null) cooldownOverlay.fillAmount = 0;
+            if (cooldownText != null) cooldownText.text = "";
         }
     }
 
-    public void ClickToActivateQ()
+    public void ClickToActivate()
     {
         if (linkedSkill == null || !linkedSkill.IsReady) return;
 
         PlayerController pc = linkedSkill.championState.GetComponent<PlayerController>();
-
-        if (pc != null)
+        if (pc != null && pc.hasCastSkill && pc.hasFired)
         {
-            if (pc.currentSkillCastTime <= 0 && pc.hasFired)
-            {
-                pc.currentCastingIndex = 0;
-                linkedSkill.ActivateSkill();
-            }
+            linkedSkill.ActivateSkill();
         }
     }
 }

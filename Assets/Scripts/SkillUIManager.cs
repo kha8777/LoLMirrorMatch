@@ -1,4 +1,4 @@
-using System.Collections; // Phải có dòng này để dùng Coroutine
+using System.Collections;
 using UnityEngine;
 
 public class SkillUIManager : MonoBehaviour

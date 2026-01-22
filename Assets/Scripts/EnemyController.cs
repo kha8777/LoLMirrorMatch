@@ -22,8 +22,9 @@ public class EnemyController : MonoBehaviour
     [HideInInspector] public bool hasCastSkill = true;
     [HideInInspector] public int currentCastingIndex = -1;
     [HideInInspector] public float currentSkillCastTime;
-    private float direction = -1f;
+    private ChampionState championState;
 
+    private float direction = -1f;
     public List<SkillBase> currentSkills;
 
     void Start()
@@ -31,6 +32,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         defaultStateHash = animator.GetCurrentAnimatorStateInfo(0).fullPathHash;
+        championState = GetComponent<ChampionState>();
     }
 
     void Update()
@@ -71,7 +73,7 @@ public class EnemyController : MonoBehaviour
             if (isAttackingState && hasFired) StopAttack();
             if (anySkillCasting() && hasCastSkill) StopAllSkillCasts();
 
-            attackingTime = 1f / heroData.AS;
+            attackingTime = 1f / championState.CurrentAttackSpeed;
             hasFired = false;
             isAttackingState = true;
 
@@ -88,7 +90,10 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator FireBullet()
     {
-        animator.speed = heroData.AS;
+        if (championState != null)
+        {
+            animator.speed = championState.CurrentAttackSpeed;
+        }
         yield return new WaitUntil(() => hasFired == true);
         animator.speed = 1f;
         attackRoutine = null;
@@ -116,21 +121,35 @@ public class EnemyController : MonoBehaviour
 
     public void StopAllSkillCasts()
     {
+        if (currentSkills == null || currentSkills.Count == 0)
+        {
+            animator.speed = 1f;
+            ResetCastStates();
+            return;
+        }
+
         for (int i = 0; i < currentSkills.Count; i++)
         {
-            if (currentSkills[i].castingSkillCoroutine != null)
+            if (currentSkills[i] != null && currentSkills[i].castingSkillCoroutine != null)
             {
                 StopCoroutine(currentSkills[i].castingSkillCoroutine);
                 currentSkills[i].castingSkillCoroutine = null;
             }
         }
 
+        ResetCastStates();
+    }
+
+    private void ResetCastStates()
+    {
         currentCastingIndex = -1;
         hasCastSkill = true;
         currentSkillCastTime = 0f;
         animator.speed = 1f;
         animator.SetBool("isSpellQ", false);
-        // animator.SetBool("isSpellW", false);
+        animator.SetBool("isSpellW", false);
+        animator.SetBool("isSpellE", false);
+        animator.SetBool("isSpellR", false);
         animator.Play(defaultStateHash, 0, 0f);
     }
 

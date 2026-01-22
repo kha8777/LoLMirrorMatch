@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923c69f5b4207d94b99c86400f3597cd, type: 3}
+  m_Name: EzrealE_Data
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: Arcane Shift
+  skillIcon: {fileID: 21300000, guid: 1c1509b9fb1cf0e4e9a61b50ed68ee7b, type: 3}
+  damageLV1: 80
+  damagePerLevel: 50
+  damegeType: Magical
+  additionalPhysicDamagePercent: 50
+  addPhysicPercentPerLevel: 0
+  additionalMagicDamagePercent: 75
+  addMagicPercentPerLevel: 0
+  cooldown: 0
+  cooldownPerLevel: -3
+  manaCost: 70
+  manaCostPerLevel: 0
+  projectileSpeed: 2000
+  skillPrefab: {fileID: 278683042709908152, guid: 165f2f79cc206ab49af6313cf9526807, type: 3}
+  animationClipName: Ezreal_E

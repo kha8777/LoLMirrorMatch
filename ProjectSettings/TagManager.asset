@@ -10,6 +10,7 @@ TagManager:
   - PlayerIndicator
   - EnemyIndicator
   - Obstacle
+  - Minion
   layers:
   - Default
   - TransparentFX

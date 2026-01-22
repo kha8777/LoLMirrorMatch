@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int currentCastingIndex = -1;
     [HideInInspector] public float currentSkillCastTime;
     private float lastMoveDirection = 0f;
+    private float mobileMoveInput = 0f;
+    private ChampionState championState;
 
     public List<SkillBase> currentSkills;
 
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         defaultStateHash = animator.GetCurrentAnimatorStateInfo(0).fullPathHash;
+        championState = GetComponent<ChampionState>();
     }
 
     void Update()
@@ -74,13 +77,13 @@ public class PlayerController : MonoBehaviour
             else if (rightIsPressed)
             {
                 moveInput = 1f;
-                lastMoveDirection = 1f;
             }
             else
             {
                 moveInput = 0f;
             }
 
+            if (moveInput == 0) moveInput = mobileMoveInput;
             if (moveInput != 0)
             {
                 if (isAttackingState && hasFired) StopAttack();
@@ -96,6 +99,21 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -xRange, xRange), transform.position.y, transform.position.z);
     }
 
+    public void SetMobileMove(float input)
+    {
+        if (input > 0.1f) mobileMoveInput = 1f;
+        else if (input < -0.1f) mobileMoveInput = -1f;
+        else mobileMoveInput = 0f;
+
+        if (mobileMoveInput != 0) lastMoveDirection = mobileMoveInput;
+    }
+
+    public void OnJoystickMove(float value)
+    {
+        mobileMoveInput = value;
+        if (value != 0) lastMoveDirection = value;
+    }
+
     public void OnBasicAttackButtonClick()
     {
         if (attackingTime <= 0f && hasCastSkill)
@@ -103,7 +121,7 @@ public class PlayerController : MonoBehaviour
             if (isAttackingState && hasFired) StopAttack();
             if (anySkillCasting() && hasCastSkill) StopAllSkillCasts();
 
-            attackingTime = 1f / heroData.AS;
+            attackingTime = 1f / championState.CurrentAttackSpeed;
             hasFired = false;
             isAttackingState = true;
 
@@ -128,7 +146,7 @@ public class PlayerController : MonoBehaviour
             if (isAttackingState && hasFired) StopAttack();
             if (anySkillCasting() && hasCastSkill) StopAllSkillCasts();
 
-            attackingTime = 1f / heroData.AS;
+            attackingTime = 1f / championState.CurrentAttackSpeed;
             hasFired = false;
             isAttackingState = true;
 
@@ -145,7 +163,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator FireBullet()
     {
-        animator.speed = heroData.AS;
+        if (championState != null)
+        {
+            animator.speed = championState.CurrentAttackSpeed;
+        }
         yield return new WaitUntil(() => hasFired == true);
         animator.speed = 1f;
         attackRoutine = null;
@@ -156,10 +177,48 @@ public class PlayerController : MonoBehaviour
         currentSkillCastTime -= Time.deltaTime;
         if (currentSkillCastTime < 0f) currentSkillCastTime = 0f;
 
+        // SKILL Q
         if (Keyboard.current.qKey.wasPressedThisFrame && hasCastSkill && hasFired)
         {
-            if (!currentSkills[0].IsReady) return;
-            currentSkills[0].ActivateSkill();
+            int qLevel = championState.GetSkillLevel(0);
+            if (currentSkills.Count > 0 && currentSkills[0].IsReady && qLevel > 0)
+            {
+                // Kiểm tra thêm mana ở đây nếu mày đã có hệ thống Mana
+                currentSkills[0].ActivateSkill();
+            }
+        }
+
+        // SKILL W
+        if (Keyboard.current.wKey.wasPressedThisFrame && hasCastSkill && hasFired)
+        {
+            int wLevel = championState.GetSkillLevel(1);
+            if (currentSkills.Count > 1 && currentSkills[1].IsReady && wLevel > 0)
+            {
+                // Kiểm tra thêm mana ở đây nếu mày đã có hệ thống Mana
+                currentSkills[1].ActivateSkill();
+            }
+        }
+
+        // SKILL E
+        if (Keyboard.current.eKey.wasPressedThisFrame && hasCastSkill && hasFired)
+        {
+            int eLevel = championState.GetSkillLevel(2);
+            if (currentSkills.Count > 2 && currentSkills[2].IsReady && eLevel > 0)
+            {
+                // Kiểm tra thêm mana ở đây nếu mày đã có hệ thống Mana
+                currentSkills[2].ActivateSkill();
+            }
+        }
+
+        // SKILL R
+        if (Keyboard.current.rKey.wasPressedThisFrame && hasCastSkill && hasFired)
+        {
+            int rLevel = championState.GetSkillLevel(3);
+            if (currentSkills.Count > 3 && currentSkills[3].IsReady && rLevel > 0)
+            {
+                // Kiểm tra thêm mana ở đây nếu mày đã có hệ thống Mana
+                currentSkills[3].ActivateSkill();
+            }
         }
     }
 
@@ -185,21 +244,35 @@ public class PlayerController : MonoBehaviour
 
     public void StopAllSkillCasts()
     {
+        if (currentSkills == null || currentSkills.Count == 0)
+        {
+            animator.speed = 1f;
+            ResetCastStates();
+            return;
+        }
+
         for (int i = 0; i < currentSkills.Count; i++)
         {
-            if (currentSkills[i].castingSkillCoroutine != null)
+            if (currentSkills[i] != null && currentSkills[i].castingSkillCoroutine != null)
             {
                 StopCoroutine(currentSkills[i].castingSkillCoroutine);
                 currentSkills[i].castingSkillCoroutine = null;
             }
         }
 
+        ResetCastStates();
+    }
+
+    private void ResetCastStates()
+    {
         currentCastingIndex = -1;
         hasCastSkill = true;
         currentSkillCastTime = 0f;
         animator.speed = 1f;
         animator.SetBool("isSpellQ", false);
-        // animator.SetBool("isSpellW", false);
+        animator.SetBool("isSpellW", false);
+        animator.SetBool("isSpellE", false);
+        animator.SetBool("isSpellR", false);
         animator.Play(defaultStateHash, 0, 0f);
     }
 
@@ -258,7 +331,27 @@ public class PlayerController : MonoBehaviour
         // kỹ năng
         if (anySkillCasting())
         {
-            if (currentCastingIndex == 0) animator.SetBool("isSpellQ", true);
+            if (currentCastingIndex == 0)
+            {
+                animator.speed = 1f;
+                animator.SetBool("isSpellQ", true);
+            }
+            else if (currentCastingIndex == 1)
+            {
+                animator.speed = 1f;
+                animator.SetBool("isSpellW", true);
+            }
+            else if (currentCastingIndex == 2)
+            {
+                animator.speed = 1f;
+                animator.SetBool("isSpellE", true);
+            }
+            else if (currentCastingIndex == 3)
+            {
+                animator.speed = 1f;
+                animator.SetBool("isSpellR", true);
+            }
+
             if (currentSkillCastTime <= 0)
             {
                 StopAllSkillCasts();
@@ -267,8 +360,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            animator.speed = 1f;
             animator.SetBool("isSpellQ", false);
-            // animator.SetBool("isSpellW", false);
+            animator.SetBool("isSpellW", false);
+            animator.SetBool("isSpellE", false);
+            animator.SetBool("isSpellR", false);
         }
     }
 

@@ -3,6 +3,7 @@ using UnityEngine;
 public class HeroData : ScriptableObject
 {
     public string heroName;
+    public Sprite heroIcon;
     public float bCost;
     public float rpCost;
 

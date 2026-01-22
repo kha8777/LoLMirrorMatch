@@ -1,16 +1,19 @@
 using UnityEngine;
+using System;
 
 public class Projectile : MonoBehaviour
 {
     [HideInInspector] public float speed;
     [HideInInspector] public float damage;
-    [HideInInspector] public DamageType damageType = DamageType.Physical;
+    [HideInInspector] public DamageType damageType;
 
-    public float lifetime = 2f;
+    public float lifetime = 3f;
     public bool isPiercing = false;
 
     public string ownerTag;
     public string targetTag;
+
+    public Action<GameObject> OnHitTarget;
 
     private void Start()
     {
@@ -24,37 +27,21 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        // ignore collisions with other projectiles
-        if (other.CompareTag("PlayerBullet") || other.CompareTag("EnemyBullet"))
-            return;
+        if (other.CompareTag("PlayerBullet") || other.CompareTag("EnemyBullet")) return;
 
-        // Player bullet should hit Enemies
-        if (gameObject.CompareTag("PlayerBullet") && other.CompareTag("Enemy"))
+        if (gameObject.CompareTag("PlayerBullet") && other.CompareTag("Enemy") || // Player
+            gameObject.CompareTag("EnemyBullet") && other.CompareTag("Player"))   // Enemy
         {
             var h = other.GetComponent<Health>();
             if (h != null)
             {
+                OnHitTarget?.Invoke(other.gameObject);
                 h.TakeDamage(damage, damageType);
-                if (!isPiercing)
-                {
-                    Destroy(gameObject);
-                }
-                return;
+                if (!isPiercing) Destroy(gameObject);
             }
         }
 
-        // Enemy bullet should hit Player
-        if (gameObject.CompareTag("EnemyBullet") && other.CompareTag("Player"))
-        {
-            var h = other.GetComponent<Health>();
-            if (h != null)
-            {
-                h.TakeDamage(damage, damageType);
-                Destroy(gameObject);
-                return;
-            }
-        }
-
+        // Obstacle
         if (other.CompareTag("Obstacle"))
         {
             Destroy(gameObject);

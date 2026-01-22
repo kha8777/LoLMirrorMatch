@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923c69f5b4207d94b99c86400f3597cd, type: 3}
+  m_Name: EzrealR_Data
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: Trueshot Barrage
+  skillIcon: {fileID: 21300000, guid: 6a14534cad8a57443b70561b84b685a6, type: 3}
+  damageLV1: 350
+  damagePerLevel: 200
+  damegeType: Magical
+  additionalPhysicDamagePercent: 120
+  addPhysicPercentPerLevel: 0
+  additionalMagicDamagePercent: 90
+  addMagicPercentPerLevel: 0
+  cooldown: 120
+  cooldownPerLevel: -15
+  manaCost: 100
+  manaCostPerLevel: 0
+  projectileSpeed: 2000
+  skillPrefab: {fileID: 598150539460787175, guid: bd1b4ef78aa1f6541836ff4a3097075a, type: 3}
+  animationClipName: Ezreal_R

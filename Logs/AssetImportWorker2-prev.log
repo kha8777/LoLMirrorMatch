@@ -1,0 +1,616 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.2f1 (a9779f353c9b) revision 11106207'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit Professional' Language: 'en' Physical Memory: 15752 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-01-22T11:03:32Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Tray" at "2026-01-22T11:03:32.4604588Z"
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.2f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/Tray/Unity/LOLMirrorMatch
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+51239
+-licensingIpc
+LicenseClient-Tray
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/Tray/Unity/LOLMirrorMatch
+C:/Users/Tray/Unity/LOLMirrorMatch
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [19476]  Target information:
+
+Player connection [19476]  * "[IP] 192.168.1.226 [Port] 0 [Flags] 2 [Guid] 1569747926 [EditorId] 1569747926 [Version] 1048832 [Id] WindowsEditor(7,MSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19476] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19476] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              d78d233b4d0b4d85b5ca1d002a51eea4
+  Correlation Id:          392b6ab9bb42f7c686e35b3ef6bb5d64
+  External correlation Id: 7030826564732009594
+  Machine Id:              MUO+ykhDnXWC5hgtd5lZAnH3Mwk=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Tray" (connect: 0.00s, validation: 0.00s, handshake: 2.21s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Tray-notifications" at "2026-01-22T11:03:34.6689955Z"
+[Licensing::Module] Licensing Background thread has ended after 2.21s
+[Licensing::Module] Licensing is initialized (took 1.84s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968360639405-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Refreshing native plugins compatible for Editor in 14.10 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 1.74 ms.
+Initialize engine version: 6000.3.2f1 (a9779f353c9b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Tray/Unity/LOLMirrorMatch/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX 5500M (ID=0x7340)
+    Vendor:   ATI
+    VRAM:     4055 MB
+    Driver:   32.0.21041.1000
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56680
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.2f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.003181 seconds.
+- Loaded All Assemblies, in  0.402 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 239 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.757 seconds
+Domain Reload Profiling: 1155ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (188ms)
+		LoadAssemblies (94ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (185ms)
+			TypeCache.Refresh (183ms)
+				TypeCache.ScanAssembly (170ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (757ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (719ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (357ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (105ms)
+			ProcessInitializeOnLoadAttributes (169ms)
+			ProcessInitializeOnLoadMethodAttributes (82ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Duplicate assembly 'System.Runtime.CompilerServices.Unsafe.dll' with different versions detected, using 'Packages/com.unity.collections/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll, AssemblyName=System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' and ignoring 'Packages/com.unity.ai.assistant/Plugins/Markdig/Dependencies/System.Runtime.CompilerServices.Unsafe.dll, AssemblyName=System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.309 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 10.86 ms, found 5 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 10.26 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.305 seconds
+Domain Reload Profiling: 2603ms
+	BeginReloadAssembly (176ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (1030ms)
+		LoadAssemblies (542ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (563ms)
+			TypeCache.Refresh (438ms)
+				TypeCache.ScanAssembly (411ms)
+			BuildScriptInfoCaches (107ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1305ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1113ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (293ms)
+			ProcessInitializeOnLoadAttributes (490ms)
+			ProcessInitializeOnLoadMethodAttributes (302ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 11.95 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Unloading 59 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 11220 unused Assets / (22.0 MB). Loaded Objects now: 12050.
+Memory consumption went from 227.3 MB to 205.3 MB.
+Total: 20.284200 ms (FindLiveObjects: 1.141500 ms CreateObjectMapping: 1.551000 ms MarkObjects: 9.410700 ms  DeleteObjects: 8.179600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 21982.266373 seconds.
+  path: Assets/Scripts/HealthBar.cs
+  artifactKey: Guid(3ad270894cd54a449bd020a69e72b9da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/HealthBar.cs using Guid(3ad270894cd54a449bd020a69e72b9da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'af5ce076da5c724a948edbd6a3643a6f') in 0.0921297 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Data/Ezreal/EzrealR_Data.asset
+  artifactKey: Guid(99b7bcb73d0ca564db45ac7982057c57) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Data/Ezreal/EzrealR_Data.asset using Guid(99b7bcb73d0ca564db45ac7982057c57) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cab4d29988134e63d03d31b69ccd269c') in 0.0432571 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Prefabs/HealthBar/PlayerHealthBarPrefab.prefab
+  artifactKey: Guid(ba81f6450ba8c9a4cb7861d4c82eac6d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/PlayerHealthBarPrefab.prefab using Guid(ba81f6450ba8c9a4cb7861d4c82eac6d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23e0172cd1efe88552e0b99b19fb2069') in 0.0594525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Data/Ezreal/EzrealE_Data.asset
+  artifactKey: Guid(05eef3781a826d0459aec78a57fc2cc7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Data/Ezreal/EzrealE_Data.asset using Guid(05eef3781a826d0459aec78a57fc2cc7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0f04fdcbee25a8f06535b6ae44ba2ae1') in 0.0162164 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.108363 seconds.
+  path: Assets/Data/Ezreal/Ezreal_Data.asset
+  artifactKey: Guid(fe5b158b2502a0c41a1b19733455520d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Ezreal/Ezreal_Data.asset using Guid(fe5b158b2502a0c41a1b19733455520d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3593121bd572019c5991c291aab5953f') in 0.0165467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Data/Ezreal/EzrealR_Data.asset
+  artifactKey: Guid(99b7bcb73d0ca564db45ac7982057c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Ezreal/EzrealR_Data.asset using Guid(99b7bcb73d0ca564db45ac7982057c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dea140c1ad65f4d78d02c584e7b2237f') in 0.0101374 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 73.126433 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e6ee2252788d3e54dce047ec73889a7') in 0.0277308 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.889454 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a740a40b07ea545ebefac0cb8fb2ec1d') in 0.0171619 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.382695 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f7f270e512eccb54bb4344cfc0d05fb') in 0.0139728 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.918126 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7338428ea347b74a833543c755784afb') in 0.0202802 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.580789 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c9524880df6d3f0cd20cb95859b07036') in 0.0138673 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.913388 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c9695008d60652d37fb7004c3d3f3273') in 0.01966 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.212013 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c9c92d1badd1ae2042ffeec19454d105') in 0.01421 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.917591 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '62b28b0a8200fcf887156e039d645686') in 0.0174925 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.619425 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8aa115040ec5104e2ec7ba9e0c0ae989') in 0.0142491 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.951476 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0296acb0e5e3c190718ca18bed663339') in 0.0167186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.356044 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '87552f314378fc5b452dfe28e145566e') in 0.0140504 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.624652 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a665702e8b835bb08df564909858d9c1') in 0.0140294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.792776 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a7b9bf1da3fa0b5be49a966b1a089476') in 0.0143824 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.158530 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '91cd4488e686e10df41c9310f24ead00') in 0.0176481 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.223148 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dca86e2be905cb3b5cca2c0af56f36fd') in 0.0158322 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.916957 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e25a3ecf61c2f1dddc5ff57972a79fa3') in 0.0173998 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.670206 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5495feb55f54f5dc6248f5178b30f305') in 0.0148495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.911393 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aaf0e2a34d8cb6b75e3cf455953809d0') in 0.0184235 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.436158 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '034dbeb1de739642fec28fe7ed02400f') in 0.0147075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.911857 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7163ce803316fbfe75f392eb87317f35') in 0.0166458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.659460 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48b577d3709b2e7774c0bbcbf0b858bb') in 0.0145986 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.909951 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '09febd1a44dcf3d9cadd6a1a2a3eccd6') in 0.0279826 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.441845 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8f04e2732bc8c13c0a6a36204921381') in 0.0139414 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.912623 seconds.
+  path: Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab
+  artifactKey: Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/HealthBar/EnemyHealthBarPrefab.prefab using Guid(df4f01978c370214f9f8ef6f9c1e8cdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4242661105371ec4fab95dabde2fb58f') in 0.0170532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.745623 seconds.
+  path: Assets/Animation/Base.controller
+  artifactKey: Guid(e3a57ab6de9a452418665da42857676c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Base.controller using Guid(e3a57ab6de9a452418665da42857676c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0cfb32f7a65a987c1ff685eacedac10e') in 0.0052488 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.884313 seconds.
+  path: Assets/Scripts/BuffSlot.cs
+  artifactKey: Guid(aede68bfebacda94999f5df257fc8206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BuffSlot.cs using Guid(aede68bfebacda94999f5df257fc8206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b8a13a75c91024f1a632309c7577cd1d') in 0.0005979 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.098275 seconds.
+  path: Assets/Scripts/Champions/Ezreal/EzrealE.cs
+  artifactKey: Guid(896e9130bf38a994094d5717b526d98f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Champions/Ezreal/EzrealE.cs using Guid(896e9130bf38a994094d5717b526d98f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5a7bf1ccea95394ded90a5d8203c6ed0') in 0.000615 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.090747 seconds.
+  path: Assets/Scripts/Champions/Ezreal/EzrealPassive.cs
+  artifactKey: Guid(56859ab208704e1449fd133f1fd134a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Champions/Ezreal/EzrealPassive.cs using Guid(56859ab208704e1449fd133f1fd134a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e44462dc4c82911ab3737bd06af96f51') in 0.0006013 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.556397 seconds.
+  path: Assets/Scripts/Champions/Ezreal/EzrealQ.cs
+  artifactKey: Guid(26667cfb265aae249b53dea56e0a503d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Champions/Ezreal/EzrealQ.cs using Guid(26667cfb265aae249b53dea56e0a503d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9fd0b2499752f5210724406dff5748ef') in 0.000637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.471096 seconds.
+  path: Assets/Scripts/Champions/Ezreal/EzrealR.cs
+  artifactKey: Guid(453e8e66df634e24d9cb75c6145b1fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Champions/Ezreal/EzrealR.cs using Guid(453e8e66df634e24d9cb75c6145b1fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ac1c733061161b2f97aa70d2e29fe91') in 0.0009398 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.501876 seconds.
+  path: Assets/Scripts/Champions/Ezreal/EzrealRProjectile.cs
+  artifactKey: Guid(8f20b8e5e7b6d614dafae385e86942fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Champions/Ezreal/EzrealRProjectile.cs using Guid(8f20b8e5e7b6d614dafae385e86942fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f04c9eb0e26fcec51b3015b5cc65fe8a') in 0.0006603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.472526 seconds.
+  path: Assets/Sprites/Champions/Lux
+  artifactKey: Guid(05aa686e3d3e13d4d974a3cfa864882e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux using Guid(05aa686e3d3e13d4d974a3cfa864882e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38337402c90788f03cfa4f277385bef7') in 0.0113867 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.828548 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack
+  artifactKey: Guid(4fcf95d81519aa5499bce5d8b651fce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack using Guid(4fcf95d81519aa5499bce5d8b651fce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '91286f079d404103445e6cec79eb8207') in 0.0115622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0000_Layer-8.png
+  artifactKey: Guid(71458b5dc6a209f4d8e4f3fccd378c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0000_Layer-8.png using Guid(71458b5dc6a209f4d8e4f3fccd378c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[Licensing::Client] Successfully resolved entitlement details
+ -> (artifact id: 'd81efa31efd22d2071c04353a0abfdc0') in 0.0736332 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0005_Layer-13.png
+  artifactKey: Guid(4e832c93c0cb92a47bf43a790abe4738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0005_Layer-13.png using Guid(4e832c93c0cb92a47bf43a790abe4738) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23615aed8ed0c44d5c284f2f62b2a827') in 0.0345412 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0009_Layer-17.png
+  artifactKey: Guid(72fa0e1cd1052a14fbd17e87f8d1038a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0009_Layer-17.png using Guid(72fa0e1cd1052a14fbd17e87f8d1038a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21d5eeabc311bc450a9be3ca8567c5a9') in 0.0348368 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0003_Layer-11.png
+  artifactKey: Guid(7b07ff92f013a3e4d83b604b3defcdd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0003_Layer-11.png using Guid(7b07ff92f013a3e4d83b604b3defcdd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b04262c33342f2efa17171d0c1600577') in 0.0354403 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0008_Layer-16.png
+  artifactKey: Guid(332d1d59ceab0c945a993ce0d5b24d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0008_Layer-16.png using Guid(332d1d59ceab0c945a993ce0d5b24d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b858a127b8f3a0d2ba5d49a321c8b0be') in 0.0344913 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0013_Layer-21.png
+  artifactKey: Guid(35a7cdcc6e1e0da489e45725cc376459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0013_Layer-21.png using Guid(35a7cdcc6e1e0da489e45725cc376459) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bf7c8c8a28680961aa88e8daec1dc5ed') in 0.0324055 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0014_Layer-22.png
+  artifactKey: Guid(5c4f3f6949b9a9d48a700e512aa7a91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0014_Layer-22.png using Guid(5c4f3f6949b9a9d48a700e512aa7a91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1169a8da73d36fded1fa564e59d223e4') in 0.030951 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0006_Layer-14.png
+  artifactKey: Guid(2f63cdc2e0d00034e8b26198ae22561a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Champions/Lux/Lux_Attack/Lux_Attack_0006_Layer-14.png using Guid(2f63cdc2e0d00034e8b26198ae22561a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8034c4b1485a96ccc4fc67ae8b060984') in 0.0308957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

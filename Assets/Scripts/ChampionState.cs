@@ -13,9 +13,20 @@ public class ChampionState : MonoBehaviour, ILevelProvider
     [Tooltip("Items equipped on this champion (referencing ItemData ScriptableObjects)")]
     [SerializeField] private List<ItemData> items = new List<ItemData>();
     [SerializeField] private int[] skillLevels = new int[4] { 0, 0, 0, 0 };
+    [HideInInspector] public float bonusAttackSpeedFromPassive = 0f;
 
     // event khi level/items thay đổi -> các hệ thống UI/skills có thể lắng nghe
     public event Action OnStateChanged;
+    public HeroData heroData;
+
+    public float CurrentAttackSpeed
+    {
+        get
+        {
+            if (heroData == null) return 1f;
+            return heroData.AS * (1f + bonusAttackSpeedFromPassive);
+        }
+    }
 
     public int GetSkillLevel(int skillIndex)
     {
@@ -92,6 +103,14 @@ public class ChampionState : MonoBehaviour, ILevelProvider
         float flatItemAD = items.Sum(i => i.AD); // Giả sử ItemData có biến flatAD
 
         return (baseAD + flatItemAD);
+    }
+
+    public float GetBonusAD(HeroData baseHero)
+    {
+        if (baseHero == null) return 0f;
+        // Sát thương từ trang bị (Cộng thẳng và Phần trăm)
+        float flatAD = items.Sum(i => i.AD);
+        return flatAD;
     }
 
     public float GetTotalAP(HeroData baseHero)

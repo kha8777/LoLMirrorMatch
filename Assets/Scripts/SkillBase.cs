@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class SkillBase : MonoBehaviour
 {
     public SkillData skillData;
-    protected float currentCooldown = 0f;
+    [HideInInspector] public float currentCooldown = 0f;
     public ChampionState championState;
     public HeroData heroData;
     public Transform indicator;
@@ -22,6 +22,13 @@ public abstract class SkillBase : MonoBehaviour
 
     public virtual void ActivateSkill()
     {
+        int level = championState.GetSkillLevel(skillIndex);
+        if (level <= 0)
+        {
+            Debug.Log("Skill chưa được nâng cấp!");
+            return;
+        }
+
         PlayerController pc = championState.GetComponent<PlayerController>();
         if (pc != null)
         {
@@ -33,7 +40,7 @@ public abstract class SkillBase : MonoBehaviour
             pc.currentSkillCastTime = AnimationCastTime();
         }
 
-        currentCooldown = skillData.cooldown;
+        currentCooldown = CalculateCooldown(level);
 
         if (castingSkillCoroutine != null) StopCoroutine(castingSkillCoroutine);
 
@@ -48,9 +55,7 @@ public abstract class SkillBase : MonoBehaviour
     IEnumerator ExecuteSkill()
     {
         PlayerController playerController = championState.GetComponent<PlayerController>();
-        Debug.Log("dang doi skill");
         yield return new WaitUntil(() => playerController.hasCastSkill == true);
-        Debug.Log("da su dung skill xong");
         playerController.animator.speed = 1f;
         castingSkillCoroutine = null;
     }
@@ -59,17 +64,53 @@ public abstract class SkillBase : MonoBehaviour
 
     public float CalculateSkillDamage(int skillLevel)
     {
-        float baseSkillDamage = (skillLevel > 0)
-            ? skillData.damageLV1 + (skillData.damagePerLevel * (skillLevel - 1))
-            : 0f;
+        if (skillLevel <= 0) return 0f;
+
+        float baseSkillDamage = skillData.damageLV1 + (skillData.damagePerLevel * (skillLevel - 1));
+
+        // Tính tỷ lệ % theo cấp
+        float currentPhysicPercent = skillData.additionalPhysicDamagePercent + (skillData.addPhysicPercentPerLevel * (skillLevel - 1));
+        float currentMagicPercent = skillData.additionalMagicDamagePercent + (skillData.addMagicPercentPerLevel * (skillLevel - 1));
 
         float totalAD = championState.GetTotalAD(heroData);
         float totalAP = championState.GetTotalAP(heroData);
 
-        float bonusDamage = (totalAD * skillData.additionalPhysicDamagePercent) +
-                            (totalAP * skillData.additionalMagicDamagePercent);
+        float bonusDamage = (totalAD * (currentPhysicPercent / 100f)) +
+                            (totalAP * (currentMagicPercent / 100f));
 
         return baseSkillDamage + bonusDamage;
+    }
+
+    public float CalculateSkillDamageBaseOnBonus(int skillLevel)
+    {
+        if (skillLevel <= 0) return 0f;
+
+        float baseSkillDamage = skillData.damageLV1 + (skillData.damagePerLevel * (skillLevel - 1));
+
+        // Tính tỷ lệ % theo cấp
+        float currentPhysicPercent = skillData.additionalPhysicDamagePercent + (skillData.addPhysicPercentPerLevel * (skillLevel - 1));
+        float currentMagicPercent = skillData.additionalMagicDamagePercent + (skillData.addMagicPercentPerLevel * (skillLevel - 1));
+
+        float bonusAD = championState.GetBonusAD(heroData);
+        float totalAP = championState.GetTotalAP(heroData);
+
+        float bonusDamage = (bonusAD * (currentPhysicPercent / 100f)) +
+                            (totalAP * (currentMagicPercent / 100f));
+
+        return baseSkillDamage + bonusDamage;
+    }
+
+    public float CalculateManaCost(int skillLevel)
+    {
+        if (skillLevel <= 0) return skillData.manaCost; // Lv0 dùng cost của Lv1
+        return skillData.manaCost + (skillData.manaCostPerLevel * (skillLevel - 1));
+    }
+
+    public float CalculateCooldown(int skillLevel)
+    {
+        if (skillLevel <= 0) return skillData.cooldown;
+        float cd = skillData.cooldown + (skillData.cooldownPerLevel * (skillLevel - 1));
+        return Mathf.Max(cd, 0.01f); // Đảm bảo cooldown không bị âm hoặc quá nhanh
     }
 
     public float CurrentCooldown => currentCooldown;

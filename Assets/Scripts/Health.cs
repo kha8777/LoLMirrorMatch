@@ -4,6 +4,10 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
+
+    [Header("Animations")]
+    public Animator animator;
+
     public HeroData heroData;
     public float maxHP = 100f;
     [HideInInspector] public float currentHP;
@@ -18,18 +22,22 @@ public class Health : MonoBehaviour
     public Transform healthBarAnchor;       // optional anchor on character (local position)
     public float anchorOffsetY = 2f;      // fallback vertical offset
     public float anchorSideOffset = 0.5f;   // fallback horizontal offset (always treated positive/right)
-    private HealthBar healthBarInstance;
-    public TextMeshProUGUI healthText;
-    public TextMeshProUGUI levelText;
+    [HideInInspector] public TextMeshProUGUI healthText;
+    [HideInInspector] public TextMeshProUGUI levelText;
 
     [Header("Instance Level")]
     [Tooltip("Per-instance level if no ILevelProvider is present. Can be set in inspector or by spawner.")]
     public int startingLevel = 1;
 
+    private HealthBar healthBarInstance;
     private ChampionState championState;
+    private bool isDead = false;
 
     void Start()
     {
+        // Tự động tìm Animator nếu chưa gán trong Inspector
+        if (animator == null) animator = GetComponent<Animator>();
+
         if (heroData != null) maxHP = heroData.HP;
         currentHP = maxHP;
 
@@ -142,6 +150,8 @@ public class Health : MonoBehaviour
     // Main damage path: apply to shields first based on damageType, then HP
     public void TakeDamage(float dmg, DamageType damageType)
     {
+        if (isDead) return;
+
         float remaining = dmg;
 
         if (damageType == DamageType.Physical)
@@ -194,6 +204,7 @@ public class Health : MonoBehaviour
 
     private void UpdateBar()
     {
+        if (isDead || healthBarInstance == null) return;
         if (healthBarInstance != null)
         {
             healthBarInstance.SetHealth(currentHP, maxHP);
@@ -215,14 +226,66 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
-        gameObject.SetActive(false);
+        if (isDead) return;
+        isDead = true;
+
+        // Ẩn thanh máu
+        if (healthBarInstance != null)
+        {
+            healthBarInstance.gameObject.SetActive(false);
+        }
+
+        // Vô hiệu hóa các Controller (Player/Enemy)
+        if (TryGetComponent<PlayerController>(out var pc))
+        {
+            if (pc.indicator != null) pc.indicator.SetActive(false);
+            pc.StopAllSkillCasts();
+            pc.enabled = false;
+        }
+        if (TryGetComponent<EnemyController>(out var ec))
+        {
+            if (ec.indicator != null) ec.indicator.SetActive(false);
+            ec.StopAllSkillCasts();
+            ec.enabled = false;
+        }
+
+        // Ép vật lý đứng yên
+        if (TryGetComponent<Rigidbody2D>(out var rb))
+        {
+            rb.linearVelocity = Vector2.zero; // Dừng vận tốc
+            rb.bodyType = RigidbodyType2D.Static; // Chuyển sang Static để không bị đẩy
+            rb.simulated = false; // Ngừng giả lập vật lý hoàn toàn
+        }
+
+        // Tắt Indicator của kỹ năng
+        SkillBase[] skills = GetComponents<SkillBase>();
+        foreach (var s in skills)
+        {
+            if (s.indicator != null) s.indicator.gameObject.SetActive(false);
+        }
+
+        // Tắt va chạm
+        if (TryGetComponent<Collider2D>(out var col))
+        {
+            col.enabled = false;
+        }
+
+        // Chạy Animation chết
+        if (animator != null) animator.SetTrigger("die");
+
+        StopAllCoroutines();
     }
 
     void OnDestroy()
     {
         if (championState != null) championState.OnStateChanged -= UpdateBar;
+    }
+
+    public HealthBar GetHealthBar()
+    {
+        return healthBarInstance;
     }
 }
 

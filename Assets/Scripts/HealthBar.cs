@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class HealthBar : MonoBehaviour
     // fixes for jitter:
     private float lastSideDir = 0f;
     private float sideSwitchThreshold = 30f; // pixels of hysteresis to avoid flip-flop
+
+    [Header("Buff System")]
+    public List<BuffSlot> buffSlots; // Kéo 4 slot TRONG PREFAB vào đây
 
     void Awake()
     {
@@ -223,5 +227,34 @@ public class HealthBar : MonoBehaviour
             healthText.text = s;
             healthText.gameObject.SetActive(true);
         }
+    }
+
+    public void UpdateBuff(string name, Sprite icon, int count)
+    {
+        // 1. Tìm slot cũ để update
+        foreach (var slot in buffSlots)
+        {
+            if (slot.gameObject.activeSelf && slot.currentBuffName == name)
+            {
+                slot.UpdateCount(count);
+                return;
+            }
+        }
+        // 2. Nếu mới hoàn toàn thì tìm slot trống đầu tiên
+        foreach (var slot in buffSlots)
+        {
+            if (!slot.gameObject.activeSelf)
+            {
+                slot.SetupBuff(name, icon, count);
+                return;
+            }
+        }
+    }
+
+    public void RemoveBuff(string name)
+    {
+        foreach (var slot in buffSlots)
+            if (slot.gameObject.activeSelf && slot.currentBuffName == name)
+                slot.ClearBuff();
     }
 }
